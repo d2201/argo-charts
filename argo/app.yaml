@@ -9,10 +9,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: app
   sources:
-  #TODO
-    #- chart: elasticsearch
-    #  repoURL: https://helm.elastic.co
-    # targetRevision: 8.5.1
-    #- repoURL: https://github.com/argoproj/argocd-example-apps.git
-    #  path: guestbook
-    #  targetRevision: HEAD
+    - repoURL: https://github.com/d2201/argo-charts.git
+      path: app
+      targetRevision: HEAD
+    - repoURL: https://github.com/d2201/argo-app.git
+      path: release
+      targetRevision: HEAD
