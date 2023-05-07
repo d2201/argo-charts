@@ -21,11 +21,6 @@ spec:
       - pause: {duration: 10}
       - setWeight: 80
       - pause: {duration: 10}
-      canaryService: {{ .Values.app_name }}-canary
-      stableService: {{ .Values.app_name }}
-      trafficRouting:
-        nginx:
-          stableIngress: {{ .Values.app_name }}-ingress
   template:
     metadata:
       labels:
