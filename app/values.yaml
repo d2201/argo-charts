@@ -3,6 +3,6 @@
 # Declare variables to be passed into your templates.
 
 app_name: dk-argo-app
-replicas: 2
+replicas: 3
 imageRepository: dkdevelopment/argo-app
 namespace: app
