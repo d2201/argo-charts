@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: {{ .Values.app_name }}
   namespace: {{ .Values.namespace }}
@@ -10,22 +10,6 @@ spec:
   selector:
     matchLabels:
       app: {{ .Values.app_name }}
-  strategy:
-    canary:
-      steps:
-      - setWeight: 20
-      - pause: {}
-      - setWeight: 40
-      - pause: {duration: 10}
-      - setWeight: 60
-      - pause: {duration: 10}
-      - setWeight: 80
-      - pause: {duration: 10}
-      canaryService: {{ .Values.app_name }}-canary
-      stableService: {{ .Values.app_name }}
-      trafficRouting:
-        nginx:
-          stableIngress: {{ .Values.app_name }}-ingress
   template:
     metadata:
       labels:
