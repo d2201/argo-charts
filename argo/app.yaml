@@ -6,15 +6,8 @@ metadata:
 spec:
   project: default
   destination:
-    server: https://kubernetes.default.svc
-    namespace: app
-  sources:
-    - repoURL: https://github.com/d2201/argo-charts.git
-      path: app
-      targetRevision: HEAD
-      helm:
-        valueFiles:
-          - $values/release/version.yaml
-    - repoURL: https://github.com/d2201/argo-app.git
-      ref: values
-      targetRevision: HEAD
+    name: in-cluster
+  source:
+    repoURL: https://github.com/d2201/argo-charts.git
+    path: app
+    targetRevision: HEAD
