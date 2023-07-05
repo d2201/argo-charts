@@ -6,4 +6,4 @@ app_name: dk-argo-app
 replicas: 3
 imageRepository: dkdevelopment/argo-app
 namespace: app
-version: 4b0f12958f0d166261806a36b4519336ce57c1c1
+version: a24dc3a0e478415894d50eb8e98d67350b748810
